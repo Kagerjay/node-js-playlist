@@ -10,10 +10,13 @@
 // console.log('yo dawgs, now listening to port 3000');
 
 var http = require('http');
-var fs = require('fs');
+var fs = require('fs'); // nodeJS object
 
-var myReadStream = fs.createReadStream(__dirname + '/readMe.txt'); // reading chunks of data via a buffer
+var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8'); // reading chunks of data via a buffer. //UTF8 makes chunks from binary to readable Data
 
-myReadStream.on('data', function(chunk){
-  console.log()
-}
+// Listen for an event
+myReadStream.on('data', function(chunk){ // chunk = packet of data
+  console.log('new chunk received:');
+  console.log(chunk); // without UTF8, Example response <Buffer 4c 6f 72 65 6d 20 69 70 73 75 6d 20 64 6f 6c 6f 72 20 73 69 74 20 61 6d 65 74 2c 20 63 6f 6e 73 65 63 74 65 74 75 72 20 61 64 69 70 69 73 63 69 6e 67 ... >
+  console.log(chunk); // with UTF8, Example response: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis orci in pellentesque accumsan...."
+});
