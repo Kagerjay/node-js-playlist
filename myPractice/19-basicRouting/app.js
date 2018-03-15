@@ -22,7 +22,7 @@ var server = http.createServer(function(req,res){
     res.writeHead(200, {'Content-type': 'text/html'});
     fs.createReadStream(__dirname + '/index.html').pipe(res);
   // http://127.0.0.1:3000/contact  → brings user to contact.html
-  } else if (req.url === '/contact'){
+} else if (req.url === '/contact-us'){
     res.writeHead(200, {'Content-type': 'text/html'});
     fs.createReadStream(__dirname + '/contact.html').pipe(res);
   // http://127.0.0.1:3000/api/ninjas → brings user to JSON data page
