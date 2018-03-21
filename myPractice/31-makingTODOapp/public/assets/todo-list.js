@@ -19,6 +19,7 @@ $(document).ready(function(){
 
   });
 
+  // DELEING ITEMS ON CLICK
   $('li').on('click', function(){
       var item = $(this).text().replace(/ /g, "-");
       $.ajax({
