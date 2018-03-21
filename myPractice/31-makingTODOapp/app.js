@@ -5,8 +5,11 @@ var app = express();
 // set up template engine
 app.set('view engine', 'ejs');
 
-// static Files
-app.use('/assets', express.static('./public');
+// static Files for CSS files
+app.use(express.static('./public'));
+
+//fire controllers
+todoController(app);
 
 // listen to port
 app.listen(3000);
