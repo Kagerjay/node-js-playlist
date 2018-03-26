@@ -1,3 +1,4 @@
+// Frontend JS that talks to backend NodeJS, treating it like an API
 $(document).ready(function(){
 
   $('form').on('submit', function(){
